@@ -1,0 +1,27 @@
+{
+  "name": "webpack-hash-chunk-plugin",
+  "version": "0.0.1",
+  "description": "使用hash值作为chunkId 的值",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wujinzhe/webpack-hash-chunk-plugin.git"
+  },
+  "files":[
+    "index.js"
+  ],
+  "keywords": [
+    "webpack",
+    "hash",
+    "chunkId"
+  ],
+  "author": "wujinzhe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wujinzhe/webpack-hash-chunk-plugin/issues"
+  },
+  "homepage": "https://github.com/wujinzhe/webpack-hash-chunk-plugin#readme"
+}
