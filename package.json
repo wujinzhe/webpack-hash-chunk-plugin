@@ -1,6 +1,6 @@
 {
   "name": "webpack-hash-chunk-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "使用hash值作为chunkId 的值",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/wujinzhe/webpack-hash-chunk-plugin.git"
   },
-  "files":[
+  "files": [
     "index.js"
   ],
   "keywords": [
