@@ -16,7 +16,7 @@ class WebpackHashChunkPlugin {
           const hash = createHash(options.algorithm)
           hash.update(`${new Date().getTime()}${item.id}`)
           let hashId = hash.digest(options.encoding)
-          // hashId = hashId.substr(0, options.length)
+          hashId = hashId.substr(0, options.length)
           item.id = hashId
           item.ids = [hashId]
         })
