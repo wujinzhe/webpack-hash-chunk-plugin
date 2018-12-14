@@ -1,39 +1,48 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 const path = require('path')
+const WebpackHashChunkPlugin = require('../index')
 
 module.exports = {
   entry: {
     main: path.resolve(__dirname, 'src/index.js'),
-    // main: 'src/index.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist/'),
-    // path: './dist/',
-    filename: 'js/[name].js'
+    filename: 'js/[hash:6].js'
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        // include: path.resolve(__dirname, '../src/'),
-        loader: 'babel-loader',
-        options: {
-          cacheDirectory: true
-        }
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true
+            }
+          },
+          // {
+          //   loader: path.resolve(__dirname, 'loader.js'),
+          //   options: {}
+          // }
+        ]
       },
     ]
   },
   devServer: {
     port: 9090,
+    hot: true,
     stats: {
       all: false,
       timings: true,
       version: true,
       builtAt: true,
       assets: true,
-      assetsSort: 'field'
+      assetsSort: 'field',
+      errors: true,
+      warnings: true
     }
   },
   plugins: [
@@ -41,16 +50,17 @@ module.exports = {
       filename: 'index.html',
       template: 'example/index.html'
     }),
-    // new webpack.DefinePlugin({
-    //   'process.env.NODE_ENV': '"base"'
-    // })
+    new webpack.HotModuleReplacementPlugin(),
+    new WebpackHashChunkPlugin()
   ],
-  // stats: {
-  //   all: false,
-  //   timings: true,
-  //   version: true,
-  //   builtAt: true,
-  //   assets: true,
-  //   assetsSort: 'field'
-  // }
+  stats: {
+    all: false,
+    timings: true,
+    version: true,
+    builtAt: true,
+    assets: true,
+    assetsSort: 'field',
+    errors: true,
+    warnings: true
+  }
 }

@@ -1,4 +1,5 @@
 const createHash = require('crypto').createHash
+
 class WebpackHashChunkPlugin {
   constructor(options) {
     this.options = Object.assign({
@@ -14,7 +15,7 @@ class WebpackHashChunkPlugin {
       compilation.hooks.afterOptimizeChunkIds.tap('WebpackHashChunkPlugin', (chunks) => {
         chunks.forEach(item => {
           const hash = createHash(options.algorithm)
-          hash.update(`${new Date().getTime()}${item.id}`)
+          hash.update(`${__dirname}${item.id}`)
           let hashId = hash.digest(options.encoding)
           hashId = hashId.substr(0, options.length)
           item.id = hashId
@@ -25,4 +26,4 @@ class WebpackHashChunkPlugin {
   }
 }
 
-module.exports = WebpackHashChunkPlugin;
+module.exports = WebpackHashChunkPlugin

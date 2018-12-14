@@ -6,10 +6,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="format-detection" content="telephone=no" />
-  <title>webpack hash chunk plugin</title>
+  <title>webpack hash chunk plugin demo</title>
+  <style>
+    * {margin: 0; padding: 0;}
+    .root {
+      width: 400px;
+      margin: auto;
+      padding-top: 200px;
+    }
+    .btn {
+      padding: 10px 20px;
+      display: inline-block;
+      cursor: pointer;
+      background: #e63737;
+      color: white;
+      min-width: 40px;
+    }
+    .btn:hover {
+      opacity: 0.86;
+    }
+    .btn-group {
+      text-align: center;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+    #app {
+      border: 1px solid #ececec;
+      width: 400px;
+      height: 400px;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <div id="app"></div>
-  <!-- <a href=""></a> -->
+  <div class="root">
+    <div class="btn-group">
+      <a class="btn btn1">首页</a>
+      <a class="btn btn2">路由一</a>
+      <a class="btn btn3">路由二</a>
+    </div>
+    <div id="app"></div>
+  </div>
 </body>
 </html>
