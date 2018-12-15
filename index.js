@@ -17,7 +17,9 @@ class WebpackHashChunkPlugin {
           const hash = createHash(options.algorithm)
           hash.update(`${process.env.PWD}${item.id}`)
           let hashId = hash.digest(options.encoding)
+          hashId = 'a' + hashId
           hashId = hashId.substr(0, options.length)
+          
           item.id = hashId
           item.ids = [hashId]
         })
